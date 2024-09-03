@@ -12,15 +12,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/greeting").permitAll(); // searching for regex in url
-                    //    auth.requestMatchers("/protected/greeting").authenticated();
+                    auth.requestMatchers("/api/v1/open/**").permitAll(); // searching for regex in url
+                    auth.requestMatchers("/api/v1/protected/**").authenticated();
                 })
                 .formLogin(withDefaults());
-
         return http.build();
     }
-
-    ;
-
 
 }
