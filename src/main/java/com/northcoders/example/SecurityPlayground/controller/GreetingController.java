@@ -20,7 +20,8 @@ public class GreetingController {
     }
 
     @GetMapping("/protected/greeting") ResponseEntity<String> protectedGreeting(@AuthenticationPrincipal OAuth2User user){
-        String userName = user.getName();
+
+        String userName = (String) user.getAttributes().get("login");
         return new ResponseEntity<>("Welcome to the website " + userName + "!", HttpStatus.OK);
     }
 }
