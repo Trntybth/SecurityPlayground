@@ -8,6 +8,11 @@ public class SecurityPlaygroundApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SecurityPlaygroundApplication.class, args);
+
+
+		System.out.println("hello world");
+
+
 	}
 
 }
