@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface UserRepository {
 
-    public User findByGithubUsername();
+    User findByGithubUsername(String username);
 }
